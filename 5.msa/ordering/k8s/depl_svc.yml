@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seongjae-msa-ordering-depl
+  namespace: seongjae-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: seongjae-msa-ordering
+  template:
+    metadata:
+      labels:
+        app: seongjae-msa-ordering
+    spec:
+      containers:
+      - name: seongjae-order-backend
+        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/seongjae-msa-ordering:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: seongjae-app-secrets
+              key: DB_HOST
+        - name: DB_PW
+          valueFrom:
+            secretKeyRef:
+              name: seongjae-app-secrets
+              key: DB_PW
+        - name: AWS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: seongjae-app-secrets
+              key: AWS_KEY
+        - name: AWS_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: seongjae-app-secrets
+              key: AWS_SECRET
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: seongjae-msa-ordering-service
+  namespace: seongjae-ns
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: seongjae-msa-ordering
