@@ -4,7 +4,7 @@ metadata:
   name: seongjae-msa-product-depl
   namespace: seongjae-ns
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: seongjae-msa-product
