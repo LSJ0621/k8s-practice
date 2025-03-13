@@ -7,7 +7,6 @@ import com.beyond.ordersystem.product.dto.ProductSearchDto;
 import com.beyond.ordersystem.product.dto.ProductUpdateStockDto;
 import com.beyond.ordersystem.product.service.ProductService;
 import jakarta.validation.Valid;
-import jakarta.ws.rs.Path;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;

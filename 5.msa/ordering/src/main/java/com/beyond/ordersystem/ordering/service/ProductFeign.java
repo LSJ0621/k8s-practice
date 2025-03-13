@@ -3,7 +3,6 @@ package com.beyond.ordersystem.ordering.service;
 import com.beyond.ordersystem.common.config.FeignTokenConfig;
 import com.beyond.ordersystem.ordering.dto.ProductDto;
 import com.beyond.ordersystem.ordering.dto.ProductUpdateStockDto;
-import jakarta.ws.rs.Path;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
