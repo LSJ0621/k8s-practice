@@ -1,5 +1,6 @@
 package com.beyond.ordersystem.product.domain;
 
+import com.beyond.ordersystem.common.domain.BaseTimeEntity;
 import com.beyond.ordersystem.product.dto.ProductResDto;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +11,7 @@ import lombok.*;
 @ToString
 @Entity
 @Builder
-public class Product {
+public class Product extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
