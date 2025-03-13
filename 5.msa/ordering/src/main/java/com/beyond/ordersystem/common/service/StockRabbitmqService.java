@@ -1,6 +1,4 @@
 package com.beyond.ordersystem.common.service;
-
-import com.beyond.ordersystem.common.config.RabbitmqConfig;
 import com.beyond.ordersystem.common.dto.StockRabbitDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
